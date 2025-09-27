@@ -1,8 +1,16 @@
 const express = require("express")
 const path = require ("path")
 
+
+
+
+// requires the instagram data 
+
+
 const app = express()
 const port = 3000
+
+app.use(express.static("public"));
 
 app.set("view engine","ejs")
 
@@ -16,11 +24,19 @@ app.get("/" , (req,res)=>{
 })
 
 app.get("/ig/:username",(req,res)=>{
-    let {username} = req.params
-    res.render("instagram.ejs",{username})
+    let {username} = req.params;
+    const instaData = require("./data.json");
+    const data = instaData[username];
+    if(data){
+        res.render("instagram.ejs",{ data })
+    }
+    else{
+        res.render("usernotfound")
+    }
+
 })
 
-
+ 
 
 app.get("/rolldice" , (req ,res)=>{
     let dicval = Math.floor(Math.random() *6)+1

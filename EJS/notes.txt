@@ -118,4 +118,50 @@ app.get("/ig/:username",(req,res)=>{
 })
 
 
-#### Lecture 7
+#### Lecture 7  Conditional Statement in EJS
+Adding condition inside ejs
+
+
+    <% if(num == 6) {%>
+        <h1> Nice! roll again</h1>
+    <% } %>
+
+
+    this how we use ejs tag (<% for the writing conditional and looping)
+
+### Lecture 8 Loops in ejs
+
+<h3>Follwers that follow you</h3>
+    <ul>
+        <% for(let name of followers){ %>    
+            <li><%=name%></li>
+    <% } %>
+
+    </ul>
+
+we are using (<%= ) for print the name which treat the name as variable
+
+
+### Lecture 9  Instagram page with ejs
+
+const instadata = require("./data.json)
+
+
+creating insta page in view folder
+
+
+## Lecture 10 include 
+
+way of creating subtemplates
+
+create a folder inside view (includes)
+inside includes create a file which use want to use as included
+
+in this case I am using head of html code
+or like you can create:-
+ 
+header 
+footer 
+and what you want
+
+<%- include("includes/head.ejs")  %>
