@@ -56,6 +56,17 @@ this total give us a correct dir of views -- filename
 
 Interpolation refer to embedding expressions into marked up text
 
+Ejs tags 
+<% 'Scriptlet' tag, for control-flow, no output.
+<%_ 'whitespace  Slurping' Scriptlet tag, strips all whitespace before it
+<%= output the value into the template (HTML escaped)
+<%- output the unescaped value into the template
+<%# comment tag, no execution, no output
+<%% output a literal '<%'
+%> plain ending tag
+-%> Trim-mode ('newline slurp') tag, trims following newline
+_%> 'whitespace Slurping' ending tag, remove all whitespace after it.
+
 
 
 
