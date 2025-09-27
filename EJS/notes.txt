@@ -1,0 +1,61 @@
+# Lecture 1 what is templating
+
+Template is blueprint of the html page that having being using so many time in our website.
+
+EJS (Embedded JavaScript Templates)
+EJS is a simple templating language that lets your generate HTML markup with plain JavaScript
+
+1- create directory for the EJS
+2- inside ejs directory use (npm init -y ) it set package.json file default
+3- install express using (npm install express)
+4- install ejs by using commnand (npm install ejs)
+
+after that require express and run your server
+
+
+#Lecture 2  Using EJS
+
+ejs is package we do not need to require it because express require ejs by default
+
+so we are going to use directly 
+
+
+app.set("view engine","ejs")
+
+it says we are going to use ejs templete for the website 
+
+for response we are going to use
+ res.render("filename.ejs")
+
+ res.render render the whole file to server 
+ when we use this render with filename express search that file into a views folder in that directory and then render that file .
+
+if we want to run index.js of ejs dir. from root directory we are doing so.
+
+go to the root dir. and run this commnand
+
+nodemon EJS/index.js
+
+it run that file but it give an error when we render files from views because it search views dir into the root directory
+
+
+### Lecture -3  view directory
+
+so resolve this we are going to use path package
+
+const path = require("path")
+
+app.set("views",path.join(__dirname,"/views")) from this line we define the exect path of views
+
+it mean when search "views" go the __dirname -- it give the current working dir of index.js which is currently running and join that with "/views"
+
+this total give us a correct dir of views -- filename
+
+
+### Lecture 4 Interpolation Syntax
+
+Interpolation refer to embedding expressions into marked up text
+
+
+
+

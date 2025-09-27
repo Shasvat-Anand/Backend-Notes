@@ -1,0 +1,158 @@
+# Lecture -1 #what is node.js
+
+it is javascript runtime environment
+it give environment to run javascript outside the browser.
+It is used for server side programming
+
+
+*Node.js is not a language, library or framework.
+
+
+use for game development, command line tool, iot device.
+
+Vs code is nodejs based an application that we are using for coding.
+
+
+# Lecture -2 # Installation
+
+check by using (node -v)
+
+if not have then go to nodejs.org
+and simply download as you system
+
+# Lecture -3 # Node REPL -- read evaluate print loop
+
+open that repl window we use (node) in terminal
+
+In node repl we are not access the terminal commands like ls, pwd, etc.
+
+In this repl window we use as the same that we use js in browser console
+but we are not able to manipulate dom,because dom create in browser when we use html 
+
+As we use window object in the browser like that in the node we use global object
+
+.help to use for basic command 
+
+
+# Lecture -4 # Node files
+
+
+# how to create node file and use
+
+for creating file we use terminal as well as we use vscode
+ --- when we use terminal first go to that folder by using terminal commands
+ --- and use (touch {filename}) example-- touch script.js
+ --- write something in the script file 
+ --- use command to run that file in the node we use (node {filename}) example-- node script.js
+
+# Lecture -5 #Process
+Process is an object.
+
+process:- This object provides information about, and control over, the current Node.js process.
+
+process.argv :- return an array containing the command line arguments passed when the Node.js process was launched
+
+
+# Lecture -6 Module.export
+requiring files
+
+require() a built-in function to include external modules that exist in separate files.
+
+we use module.exports to export the method, function,etc.
+but by default it send an object ....
+
+we use module.exports when we are working on the same directory
+
+
+# Lecutre -7 Module.exports
+
+In this section we are going to require information some other directory 
+
+for require files from other directory we create a index.js file inside that directory that requires all the file you want to export futheremore it create a array of the required files moreover it export that array.
+
+like--- i have a fruit folder in which many files are store, if i want to use that files in my main directory (scipt.js), for that i going to create a index.js file and require all file which i want to use.
+
+# Lecture - 8 # NPM (Node Package Manager)
+
+npm is the standard package manager for node.js
+
+1. library of packages like react.js express.js
+2. command line tool
+
+
+# Lecuter -9 # intalling 
+
+node_module :- The node_modules folder contians every installed dependency for your project
+
+Package-lock.js :-  it records the exact version of every installed dependency including its sub-dependencies and their versions
+
+```npm install <package-name>```
+
+we are going to use figlet 
+figlet is use to print text on command line
+
+```npm install figlet   ```
+
+
+
+# Lectuer -10  #package.json
+
+The package.json file contains descriptive and functional metadata(data about data) about a project, such as a name, version, and dependencies
+
+
+package.json contain all information about the node module like which dependencies we are using and so on . 
+
+If we are going to create our own project and want to maintain a package.json file, so simple we go to terminal and write 
+
+```(npm init)```
+after this it ask some question simply answered them and press enter give the author name (like-- yours and company you working for)
+
+it make you own package.json file
+
+
+# Lecture 11 # Local vs Global Installation
+
+for global installation we use 
+first this command before using (-g) 
+command is :-
+````sudo chown -R $USER/usr/local/lib/node_modules```
+
+now we are going to install with -g
+
+```npm install -g figlet ```-- it install all the dependencies globally
+
+after we have to link that package so we use
+
+```npm link <package-name>```
+
+then we use any dependencies globally
+
+
+# Lecture 12 # requires v/s import 
+
+we use one at a time when we use require then we use require in whole project and when we use import so we use import in whole project
+
+we use import like this manner
+
+import {sum} from "./math.js"
+
+before import we have export that module things
+
+export sum = (a,b) =>a +b
+
+additionaly we have maintain a package.json file in which you have to modify
+by using
+
+npm init
+
+"type":"module"
+
+
+we can't selectively load only the pieces we need with require but with import, we can selectively load only the pieces we need, which can save memory
+
+Loading is synchronous for 'require' but can be asychronous for 'import'.
+
+
+ 
+
+

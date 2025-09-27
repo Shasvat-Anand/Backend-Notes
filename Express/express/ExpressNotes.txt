@@ -1,0 +1,180 @@
+# Lecutre 1 
+
+#library and Framework
+
+A Lebrary is a collection of pre-written code that can be used to preform specific tasks.
+Eg:- axios 
+
+A Framework is a set of pre-written code that provides a structure for developing software applications
+eg:- Express
+
+
+**************** Express *******************
+
+A node.js web application Framework that helps us to make web application .
+It is used for server side programming
+
+uses of Express
+
+1. Listen for incoming request
+2. Parse
+3. To match response with routes
+4. suitable response sending
+
+it is inside the npm so we install express from npm
+
+# Lecture 2 install and get started with express 
+
+for installation we using
+
+``` npm install express```
+
+and create a index.js file inside that folder
+
+
+go to documentation of express there u know how express is started we require the express 
+
+and it return a object when we call it
+so store them into a variable name (app)
+and app is use to help him to create server side application.
+
+it contain many function and properties
+
+from the one function is (listen)
+
+##### Listen function  
+is creating a  webserver that is use to listen the incoming api request.
+
+```app.listen(port, ()=>{
+    console.log("app is listening on the port 3000{,port}")
+})
+
+##### Port 
+are the logical endpoints of a network connection that is used to exchange information between a web server and a web client
+
+we are using listen to create a webserver and if we want to send some get request so we are using (get function)
+
+
+
+
+## Lecture 3 --- Handling request 
+
+
+#### use 
+is use to listen everykind of request whatever like get, post etc.
+
+```app.use((req,res) =>{
+    console.log("request receive")
+
+    // or here we use response(res)
+    
+    {Lecutre 4}
+
+})```
+
+
+### Lecture 4  Sending  a response
+
+every http request is in the textbased ( text form) this will convert into object by express throung parsing
+
+we use 
+`` res.send("send a string")
+    res.send({
+        name:"apple",
+        color:"red"
+    })
+
+    res.send("<h1> heading</h1> ")
+    ````
+
+
+
+
+### Lecture 5 Routing
+
+it is process of selecting a path for traffic in a network or between or across multiple network
+
+
+#### get function
+
+get function is use to listen request and response to client
+
+``` app.get('/' , (req , res) =>{
+    res.send("helloworld")
+}) ``
+
+
+## for mulitple path or multiple routes
+
+const value = app.get("/",(req , res)=>{
+    res.send("helloworld")
+})
+
+const newvalue = app.get("/newvalue", (req ,res) =>{
+    res.send("new value routing")
+})
+
+
+app.use((req ,res) =>{
+    console.log("request receive")
+    res.send(value)
+    res.send(newvalue)
+
+})
+
+
+
+## custom response
+
+``` app.get("*",(req,res) =>{
+    console.log("this page is not found")
+})
+
+### post function for post request
+
+app.post("/",(req,res)=>{
+    console.log("you send a post request to the root")
+})
+
+
+### Lecture 6 Installation of Nodemon
+
+this is a package of node which is use to restart the server automatically when there is a change in the code.
+we install the nodemon as a global package
+
+npm install -g nodemon
+
+
+
+#Lecture 7 Path Parameter
+
+in path parameter we a variable in place of path, it could be anything 
+we use like this 
+
+app.get("/:username/:id",(req, res) => {
+    console.log(req.params)
+    
+    res.send(`this is page of user @${req.params.username}`)
+})
+
+here (:username , :id) are path parameter variable in this case
+
+
+
+## Lecture 8 Query String 
+q={something } is now is query String
+
+
+
+//  query String 
+
+app.get("/search",(req, res) =>{
+    console.log(req.query)
+
+    let{ q ,color ,weight} = req.query
+
+    if(!q){
+        res.send("Nothing is in the Search")
+    }
+    res.send(`this is result on this input:${ q } ${color} ${weight}`)
+})
