@@ -1,0 +1,31 @@
+Handling GET and POST request;
+
+1--- GET request 
+
+this request is use to get some url request ;
+
+this request sent data in the form of string query;
+
+get sent limited data;
+
+get is unsafe because it show our data on url because it sent data in the form of string query  and they are visible on the url...
+
+
+2-- POST request
+
+this request is use to send some post or data from frontend to backend ...
+
+this request sent data in the form of request body;
+
+post request is safe because it sent data via request body addtionally it does not show our data on url.....
+
+post request sent unlimited data from frontend to backend .....
+
+
+Note **** they can use as both to send and get request, means get is also use as to send data at backend and post is also use as to get some request from url...
+
+----------------------------------------------------------------------------------------------------------
+
+Now we are going to learn about the OOps in javascript
+
+*********** OOPS (Object Oriented Programming)
