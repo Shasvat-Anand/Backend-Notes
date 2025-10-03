@@ -24,8 +24,7 @@ post request sent unlimited data from frontend to backend .....
 
 Note **** they can use as both to send and get request, means get is also use as to send data at backend and post is also use as to get some request from url...
 
+
+it is in the file index.html and index.js....
 ----------------------------------------------------------------------------------------------------------
 
-Now we are going to learn about the OOps in javascript
-
-*********** OOPS (Object Oriented Programming)

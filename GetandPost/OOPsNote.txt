@@ -1,0 +1,149 @@
+
+Now we are going to learn about the OOps in javascript
+
+*********** OOPS (Object Oriented Programming)
+ 
+Define -- OOPS stands for Object-Oriented Programming System (or Object-Oriented Programming Structure).
+It is a programming paradigm based on the concept of objects, which contain data (attributes) and methods (functions) to operate on that data. 
+
+we are going to discuss these topics
+
+* prototype
+
+* New operator
+
+* constructors
+
+* classes
+
+* keywords(extends , super)
+
+
+1-- object prototype ---
+
+prototype are the mechanism by which javascript object inherit freatures from one another.
+
+It is like a single template object that all object inherit methods and properties from without having their own copy.
+
+arr._proto_(reference)
+Array.prototype(actual object)
+String.prototype
+
+Every Object in javascript has a built-in property, which is called prototype. this prototype is iteself an object, so the prototype will have its own prototype, making what's called a prototype chain.
+
+
+2-- factory functions....
+
+a functions that creates objects
+
+creating like this
+
+
+```function Personmaker(name , age){
+    const person ={
+        name : name,
+
+        age : age,
+
+        talk:function() {
+            console.log("person is talking and say hello")
+        }
+
+    }
+
+    return person;
+    
+}
+
+let  P1 = new Personmaker("annad ", 24);
+let  P2 = new Personmaker("shasvat ", 21);
+
+console.log(P1)
+P1.talk() ```
+
+Disadvantages -- 
+
+each oject has their own copy of factory function....
+
+
+
+
+3----- New Operator ---
+
+The (new) operator lets developers to create and instance of a user-defined object type or of one of the built-in object types that has a constructors function...
+
+constructors-- it does not return anythings and start with captial letters
+
+
+1. Creates a blank, plain JavaScript object, For convenience, let's call It newlnstance ,
+
+
+2, Points newInstance's [[Prototype]] to the constructor function's prototype property, If the
+prototype is an Object. Otherwise, newInstance stays as a plain object with Object.prototype
+as its [Prototype].
+
+3. Executes the constructor function with the given arguments, binding newInstance as the this context
+(i.e. all references to this in the constructor function now refer to newInstance).
+
+
+
+````function Person(name , age){
+    this.name = name;
+    this.age = age;
+     
+    
+}
+
+Person.prototype.talk = function(){
+    console.log("hey buddy what are you doing",this.name)
+}
+
+
+let Person1 = new Person("golu " , 12);
+let Person2 = new Person("golu beta " , 14);
+
+console.log(Person1)
+console.log(Person1.talk == Person2.talk)
+
+Person1.talk()````
+
+
+
+4----- classes in java script---
+
+classes are a template for creating object.
+
+The constructor method in a special method of a class for creating and initializing an object instance of that class.
+
+
+```class Person {
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+
+    }
+
+    talk(){
+        console.log("hey dude, you are so great and productive");
+    }
+}
+
+let P1  = new Person("Ajju", 23)
+
+console.log(P1)
+P1.talk() ```
+
+
+
+5--- Inheritance----
+
+Inheritance is an mechanism that allow us to create new classes on the basis of already existing classes.
+
+Inheritance is done by many ways 
+
+1- extends keyword -- it is use to inherit the properties of base class.
+
+2- super keyword --- it is use to inherit constructor of base or parent class
+
+
+
