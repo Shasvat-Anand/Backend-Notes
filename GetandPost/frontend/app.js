@@ -113,3 +113,47 @@ console.log(T1.course)
 console.log(T1.age)
 T1.talk()
 S1.talk()
+
+
+
+class Mammal {
+    constructor(name){
+     this.type = "warm blooded"
+     this.name= name;
+    }
+
+    walk(){
+        console.log( this.name ,"is walking")
+    }
+}
+
+class Dog extends Mammal{
+    constructor(name){
+        super(name);
+        
+    }
+    bark(){
+        console.log(this.name," is barking")
+    }
+
+}
+
+class Cat extends Mammal{
+    constructor(name){
+        super(name);
+        
+    }
+
+
+
+}
+
+let D1 = new Dog("kalua");
+let C1 = new Cat("billie");
+
+console.log(D1)
+console.log(C1)
+
+D1.bark()
+C1.walk()
+D1.walk()
