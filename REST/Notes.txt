@@ -1,0 +1,36 @@
+REST ---
+
+Representational State Transfer
+
+REst is an architectural style that defines a set of constraints to be used for creating web services.
+
+Rest is the set of rules nothing else
+
+CURD IN DB----
+C - Create
+U - update
+R - Read
+D - Delete
+
+CURD Operation------
+
+GET- retrieves resources
+POST - submits new data to the server
+PUT - update existing data
+PATCH - update existing data partially
+DELETE - removes data
+
+Creating RESTful APIs (Application Programming Interfaces)-------------
+
+we are going to create a Quora Looking site by using Rest APIs
+
+
+GET  /posts -- to get data for all posts --- index(main) route
+
+POST /posts -- to add a new post --- create route
+
+GET  /posts/:id  -- to get one post (using id) -- view route
+
+PATCH  /posts/:id  -- to update specific post -- update route
+
+DELETE  /posts/:id  -- to delete specific post  --- destroy route
